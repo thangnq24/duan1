@@ -20,4 +20,5 @@ match ($act) {
     // Trang chủ
     '/' => (new HomeController())->home(),
     'danhmuc' => (new HomeController())->dsSanPham()
-};
+}; ggggg
+    
