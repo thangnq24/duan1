@@ -32,7 +32,9 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with default features</h3>
+              <a href="<?= BASE_URL_ADMIN . '?act=form-themdanhmuc' ?>">
+                <button class="btn btn-success">Thêm Danh Mục</button>
+              </a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -53,8 +55,16 @@
                       <td><?= $danhMuc['mo_ta']  ?></td>
 
                       <td>
-                        <button class="btn btn-warning">Sửa</button>
-                        <button class="btn btn-danger">Xoá</button>
+                        <a href="<?= BASE_URL_ADMIN . '?act=form-suadanhmuc&id_danh_muc=' . $danhMuc['id'] ?>">
+                      <button class="btn btn-sm btn-primary mb-1">Sửa</button>
+
+                        </a>
+
+                         <a href="<?= BASE_URL_ADMIN . '?act=xoadanhmuc&id_danh_muc=' . $danhMuc['id'] ?>" 
+                         onclick="return confirm('Bạn có đồng ý xoá hay không?')">
+                      <button class="btn btn-sm btn-danger">Xoá</button>
+
+                        </a>
 
                       </td>
 
