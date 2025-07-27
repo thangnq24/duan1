@@ -66,17 +66,24 @@
                       <td><?= $sanpham['trang_thai'] == 1 ?'còn bán' : 'dừng bán';  ?></td> 
 
                       <td>
-                        <a href="<?= BASE_URL_ADMIN . '?act=form-suasanpham&id_san_pham =' . $sanpham['id'] ?>">
-                      <button class="btn btn-sm btn-primary mb-1">Sửa</button>
+                        <div class="btn-group">
+
+                         <a href="<?= BASE_URL_ADMIN . '?act=chitietsanpham&id_san_pham=' . $sanpham['id'] ?>">
+                      <button class="btn btn-sm btn-primary rounded-pill w-100 text-nowrap">Chi Tiết</button>
 
                         </a>
 
-                         <a href="<?= BASE_URL_ADMIN . '?act=xoasanpham&id_san_pham =' . $sanpham['id'] ?>" 
+                        <a href="<?= BASE_URL_ADMIN . '?act=form-suasanpham&id_san_pham=' . $sanpham['id'] ?>">
+                      <button class="btn btn-sm btn-warning rounded-pill w-100 text-nowrap">Sửa</button>
+
+                        </a>
+
+                         <a href="<?= BASE_URL_ADMIN . '?act=xoasanpham&id_san_pham=' . $sanpham['id'] ?>" 
                          onclick="return confirm('Bạn có đồng ý xoá hay không?')">
-                      <button class="btn btn-sm btn-danger">Xoá</button>
+                      <button class="btn btn-sm btn-danger rounded-pill w-100 text-nowrap">Xoá</button>
 
                         </a>
-
+                        </div>
                       </td>
 
                     </tr>

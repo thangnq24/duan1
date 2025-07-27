@@ -41,3 +41,26 @@ function connectDB() {
         }
     }
 
+    // xoá session sau khi load trang
+
+    function deleteSessionError(){
+        if(isset($_SESSION['flash'])){
+            unset($_SESSION['flash']);
+            session_unset();
+            session_destroy();
+        }
+    }
+
+    function uploadFileAlbum($file,$foderUpload,$key){
+        $partStorage = $foderUpload . time() . $file['name'][$key];
+
+        $from = $file['tmp_name'][$key];
+        $to = PATH_ROOT . $partStorage;
+
+        if(move_uploaded_file($from,$to)){
+            return $partStorage;
+        }
+        return null;
+    }
+
+

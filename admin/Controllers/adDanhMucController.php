@@ -17,6 +17,7 @@ public function __construct()
     public function formaddDanhMuc(){
         // hiển thị form nhập
         require_once 'Views/DanhMuc/addDanhMucView.php';
+        deleteSessionError();
     }
 
      public function postaddDanhMuc(){
@@ -30,10 +31,14 @@ public function __construct()
 
             // tạo một mảng trống để chứa dữ liệu
             $errors = [];
+
+            
+
             if(empty($ten_danh_muc)){
                 $errors['ten_danh_muc'] = 'tên danh mục không được để trống';
             }
-
+            
+            $_SESSION['error'] = $errors;
             // nếu không lỗi thì tiến hành thêm danh mục
             if(empty($errors)){
              
@@ -41,8 +46,8 @@ public function __construct()
             header("location:" . BASE_URL_ADMIN . '?act=danhmuc');
             exit();
             }else{
-                        require_once 'Views/DanhMuc/addDanhMucView.php';
-
+                    $_SESSION['flash'] = true;
+                       header("location:" . BASE_URL_ADMIN . '?act=form-themdanhmuc');
             }
 
         }
