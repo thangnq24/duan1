@@ -327,7 +327,7 @@ public function __construct()
         $sanpham = $this->modelSanPham->getDetailSanPham($id);
         //var_dump($sanpham);die;
         $listAnhSanPham = $this->modelSanPham->getListAnhSanPham($id);
-        
+       
         if($sanpham){
              require_once 'Views/SanPham/detailSanPhamView.php';
              
