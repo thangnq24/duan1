@@ -44,7 +44,7 @@
               <h3 class="my-3">Tên Sản Phẩm: <?= $sanpham['ten_san_pham'] ?></h3>
 
               <hr>
-              <h4>Available Colors</h4>
+             
               
               <h4 class="mt-3">Giá tiền: <small><?= $sanpham['gia_san_pham'] ?></small></h4>
               <h4 class="mt-3">Giá khuyến mãi: <small><?= $sanpham['gia_khuyen_mai'] ?></small></h4>

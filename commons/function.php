@@ -64,3 +64,22 @@ function connectDB() {
     }
 
 
+    function formatPrice($price){
+        return number_format($price, 0, ',', '.');
+    }
+
+    function checkLoginAdmin(){
+        if(!isset($_SESSION['user_admin'])){
+            header("location:".BASE_URL_ADMIN . '?act=login-admin');
+             //require_once './views/auth/formLogin.php';  
+             //var_dump('abc');die;
+            exit();
+        }
+    }
+
+    function formatDate($date)
+{
+    return date("d-m-Y", strtotime($date));
+}
+
+    

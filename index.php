@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 // Require file Common
 require_once './commons/env.php'; // Khai báo biến môi trường
 require_once './commons/function.php'; // Hàm hỗ trợ
@@ -10,6 +10,8 @@ require_once './controllers/HomeController.php';
 // Require toàn bộ file Models
 require_once './models/Student.php';
 require_once './models/SanPham.php';
+require_once './models/TaiKhoan.php';
+require_once './models/GioHang.php';
 
 // Route
 $act = $_GET['act'] ?? '/';
@@ -17,8 +19,17 @@ $act = $_GET['act'] ?? '/';
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
-    // Trang chủ
+    // Trang chủ 
     '/' => (new HomeController())->home(),
-    'danhmuc' => (new HomeController())->dsSanPham()
+    'san-pham' => (new HomeController())->allsp(),
+    //'danhmuc' => (new HomeController())->dsSanPham()
+     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
+     'them-gio-hang' => (new HomeController())->addGioHang(),
+     'gio-hang' => (new HomeController())->gioHang(),
+     'login' => (new HomeController())->formLogin(),
+     'logout' => (new HomeController())->logout(),
+     'check-login' => (new HomeController())->postLogin(),
+
+
 };
     
